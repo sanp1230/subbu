@@ -1,3 +1,5 @@
+"use client"
+
 import BackgroundElements from "@/components/background-elements"
 import { FadeUp } from "@/components/scroll-animations"
 import { Button } from "@/components/ui/button"
@@ -72,8 +74,8 @@ export default function PortfolioPage() {
     </main>
   )
 }
+
 // Portfolio Filter Component
-;("use client")
 function PortfolioFilter() {
   const [activeFilter, setActiveFilter] = useState("all")
 

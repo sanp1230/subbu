@@ -1,9 +1,69 @@
+"use client"
+
 import BackgroundElements from "@/components/background-elements"
 import { FadeUp, FadeIn, SlideIn } from "@/components/scroll-animations"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { ArrowRight, Mail, MapPin, MessageSquare, Phone, Sparkles } from "lucide-react"
+
+// Contact Form Component
+function ContactForm() {
+  return (
+    <form className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-2">
+          <label htmlFor="name" className="text-sm font-medium">
+            Name
+          </label>
+          <Input id="name" placeholder="Your name" className="border-border/50 focus:border-lavender" required />
+        </div>
+
+        <div className="space-y-2">
+          <label htmlFor="email" className="text-sm font-medium">
+            Email
+          </label>
+          <Input
+            id="email"
+            type="email"
+            placeholder="Your email"
+            className="border-border/50 focus:border-lavender"
+            required
+          />
+        </div>
+      </div>
+
+      <div className="space-y-2">
+        <label htmlFor="subject" className="text-sm font-medium">
+          Subject
+        </label>
+        <Input
+          id="subject"
+          placeholder="What's this about?"
+          className="border-border/50 focus:border-lavender"
+          required
+        />
+      </div>
+
+      <div className="space-y-2">
+        <label htmlFor="message" className="text-sm font-medium">
+          Message
+        </label>
+        <Textarea
+          id="message"
+          placeholder="Your message"
+          className="min-h-[150px] border-border/50 focus:border-lavender"
+          required
+        />
+      </div>
+
+      <Button type="submit" className="w-full bg-lavender hover:bg-lavender/80 text-white">
+        Send Message
+        <ArrowRight className="ml-2 h-4 w-4" />
+      </Button>
+    </form>
+  )
+}
 
 export default function ContactPage() {
   return (
@@ -226,77 +286,5 @@ export default function ContactPage() {
         </div>
       </section>
     </main>
-  )
-}
-// Contact Form Component
-;("use client")
-function ContactForm() {
-  return (
-    <form className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="space-y-2">
-          <label htmlFor="name" className="text-sm font-medium">
-            Name
-          </label>
-          <Input id="name" placeholder="Your name" className="border-border/50 focus:border-lavender" required />
-        </div>
-
-        <div className="space-y-2">
-          <label htmlFor="email" className="text-sm font-medium">
-            Email
-          </label>
-          <Input
-            id="email"
-            type="email"
-            placeholder="Your email"
-            className="border-border/50 focus:border-lavender"
-            required
-          />
-        </div>
-      </div>
-
-      <div className="space-y-2">
-        <label htmlFor="subject" className="text-sm font-medium">
-          Subject
-        </label>
-        <Input
-          id="subject"
-          placeholder="What is this regarding?"
-          className="border-border/50 focus:border-lavender"
-          required
-        />
-      </div>
-
-      <div className="space-y-2">
-        <label htmlFor="message" className="text-sm font-medium">
-          Message
-        </label>
-        <Textarea
-          id="message"
-          placeholder="Tell me about your project..."
-          className="min-h-[150px] border-border/50 focus:border-lavender"
-          required
-        />
-      </div>
-
-      <div className="space-y-2">
-        <div className="flex items-center space-x-2">
-          <input
-            type="checkbox"
-            id="consent"
-            className="rounded border-border/50 text-lavender focus:ring-lavender"
-            required
-          />
-          <label htmlFor="consent" className="text-sm text-muted-foreground">
-            I agree to the processing of my data as outlined in the Privacy Policy
-          </label>
-        </div>
-      </div>
-
-      <Button type="submit" className="w-full bg-lavender hover:bg-lavender/80 text-white">
-        Send Message
-        <ArrowRight className="ml-2 h-4 w-4" />
-      </Button>
-    </form>
   )
 }
